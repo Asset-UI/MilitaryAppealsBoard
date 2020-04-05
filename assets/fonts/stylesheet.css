@@ -1,0 +1,38 @@
+
+@font-face {
+    font-family: 'DinNext';
+    src: url('DinNextLight.eot');
+    src: url('DinNextLight.eot?#iefix') format('embedded-opentype'),
+        url('DinNextLight.woff2') format('woff2'),
+        url('DinNextLight.woff') format('woff'),
+        url('DinNextLight.ttf') format('truetype'),
+        url('DinNextLight.svg#DinNextLight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'DinNext';
+    src: url('DinNextMedium.eot');
+    src: url('DinNextMedium.eot?#iefix') format('embedded-opentype'),
+        url('DinNextMedium.woff2') format('woff2'),
+        url('DinNextMedium.woff') format('woff'),
+        url('DinNextMedium.ttf') format('truetype'),
+        url('DinNextMedium.svg#DinNextMedium') format('svg');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'DinNext';
+    src: url('DinNextRegular.eot');
+    src: url('DinNextRegular.eot?#iefix') format('embedded-opentype'),
+        url('DinNextRegular.woff2') format('woff2'),
+        url('DinNextRegular.woff') format('woff'),
+        url('DinNextRegular.ttf') format('truetype'),
+        url('DinNextRegular.svg#DinNextRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+

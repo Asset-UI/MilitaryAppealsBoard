@@ -1,0 +1,51 @@
+.TabsContainer,
+.Tab,
+.BodyContent,
+.Header,
+.CaseCard,
+.slider {
+  direction: rtl;
+}
+/* ---------------------COMMON STYLE----------------------- */
+img.TabIcon {
+  margin-left: 5px;
+}
+img.BtmLftLogo {
+  left: -155px;
+}
+.TitleContent {
+  margin-left: auto;
+  text-align: right;
+}
+.password img.eye {
+  left: 15px;
+}
+img.Notifications {
+  margin-right: auto;
+}
+.UserData {
+  text-align: right;
+}
+.CaseIdentifier p:first-child,
+.CaseInfo div:last-child p:first-child {
+  margin-left: 3px;
+}
+.CaseAssignee {
+  margin-right: 0 !important;
+}
+.InfoContainer {
+  text-align: right;
+}
+.Attachments {
+  margin-right: auto;
+}
+.LawyerInfo img {
+  margin-left: 10px;
+}
+.CaseInfo div:first-child {
+  margin-right: 0 !important;
+}
+.Attachments img {
+  margin-left: 5px;
+}
+/* ---------------------COMMON STYLE----------------------- */
