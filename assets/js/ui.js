@@ -1,7 +1,7 @@
 $(document).ready(function() {
-  $('.Tab').on('click', function() {
-    $('.Tab').removeClass('selected');
-    $(this).addClass('selected');
+  $('.Tab, .CaseFilter').on('click', function() {
+    $('.Tab, .CaseFilter').removeClass('selected');
+    $(this).focus().addClass('selected');
   });
   $(function() {
     $('#passwordfield').on('keyup', function() {
@@ -15,4 +15,107 @@ $(document).ready(function() {
       $('#passwordfield').attr('type', 'password');
     });
   });
+  $("p.UserName").on('click', function(){
+    $( 'body' ).addClass('NoScroll');
+    $('.FilterContainer, .DefaultContent').removeClass('hidden');
+    $('.FilterPopup').removeClass(' animated slideOutDown').addClass(' animated slideInUp');
+    $( '.Content').addClass('hidden');
+    $('.Content.LastContent').removeClass('hidden');
+  })
+  $("img.Filter").on('click', function(){
+    $( 'body' ).addClass('NoScroll');
+    $('.FilterContainer, .DefaultContent').removeClass('hidden');
+    $('.FilterPopup').removeClass(' animated slideOutDown').addClass(' animated slideInUp').css('height', '230');
+  })
+  $(".Option").on('click', function(){
+    if ($(this).hasClass('FirstScreen')){
+      $('.FirstScreen').removeClass('Selected');
+    }
+    else if ($(this).hasClass('SecondScreen')){
+      $('.SecondScreen').removeClass('Selected');
+    }
+    $(this).addClass('Selected')
+  })
+  $(".Option").on('click', function(){
+    let MainContent = $(this).parent('.Content');
+    if ($(MainContent).hasClass('DefaultContent')){
+      $('.FilterPopup').css('height', '375');
+      $(MainContent).addClass('hidden');
+      $('.SecondaryContent').removeClass('hidden');
+    }
+  })
+  $('.Content.SecondaryContent img.BackBtn').on('click', function(){
+    $('.FilterPopup').css('height', '230');
+    $('.Content').addClass('hidden');
+    $('.DefaultContent').removeClass('hidden');
+  })
+  $('.ExpandCollapse').on('click', function(){
+    $( 'body' ).removeClass('NoScroll');
+    $('.FilterPopup').removeClass(' animated slideInUp').addClass(' animated slideOutDown').css('height', '');
+    setTimeout (function(){
+    $('.FilterContainer, .LastContent').addClass('hidden');
+    $('.Content').addClass('hidden');
+  }, 300);
+  })
+  $('.LawyerOption.One label.switch').on('click', function(){
+    $(".LawyerOption.Two label").toggleClass('toggeled');
+  });
+  $('#checkbox').on('click', function(){
+    if ($(this).is(':checked')){
+        $("#checkboxtwo").attr('type' , 'checkbox');
+        $("img.SaveBtn").fadeIn();
+    }
+    else{
+      $("#checkboxtwo").prop("checked", false);
+      $("#checkboxtwo").attr('type' , '');
+      $('.LawyerName').addClass('hidden');
+      $(".Attachment").removeClass('Clickable');
+      $("img.SaveBtn").fadeOut();
+    }
+  });
+  $('#checkboxtwo').on('click', function(){
+      if ($(this).is(':checked')){
+        $( 'body' ).addClass('NoScroll');
+        $('.FilterContainer, .ContentCaseDetails').removeClass('hidden');
+        $('.FilterPopup').removeClass(' animated slideOutDown').addClass(' animated slideInUp');
+        $(".ContentCaseDetails .FormGroup").show();
+    }
+    else{
+      $('.LawyerName').addClass('hidden');
+      $(".Attachment").removeClass('Clickable');
+    }
+  });
+  $('.FilterPopup span.ExpandCollapse').on('click', function(){
+    if ($(this).hasClass('Safe')){
+      $("#checkboxtwo").prop("checked", true);
+      $(".Attachment").addClass('Clickable');
+      $('.FilterPopup span.ExpandCollapse').removeClass("Safe");
+    }
+    else{
+      $("#checkboxtwo").prop("checked", false);
+      $(".Attachment").removeClass('Clickable');
+    }
+  });
+  $(".FormGroup button.btn.btn-primary.LogOut").on('click', function(){
+    $('.FilterPopup span.ExpandCollapse').click();
+    $("#checkboxtwo").prop("checked", true);
+    $('.LawyerName').removeClass('hidden');
+    $(".Attachment").addClass('Clickable');
+  })
+  $(".Attachment").on("click", function(){
+    if($(this).hasClass("Clickable")){
+      $( 'body' ).addClass('NoScroll');
+      $('.FilterContainer, .ContentCaseDetails').removeClass('hidden');
+      $('.FilterPopup').removeClass(' animated slideOutDown').addClass(' animated slideInUp');
+      $(".ContentCaseDetails .FormGroup").hide();
+      $('.FilterPopup span.ExpandCollapse').addClass("Safe");
+    }
+  })
+  $(function(){
+    let input = $('textarea.form-control.mb-1');   
+    input.on('keyup', function(){
+        var newValue = $(this).val().length;
+        $("#remainingC p:last-child").html((newValue));
+    });   
+   });
 });

@@ -3,7 +3,13 @@
 .BodyContent,
 .Header,
 .CaseCard,
-.slider {
+.slider,
+.CaseCard.Notification,
+.CaseDetails,
+.FormGroup,
+.InputGroup,
+span#remainingC,
+div#CaseDetails .Body {
   direction: rtl;
 }
 /* ---------------------COMMON STYLE----------------------- */
@@ -13,7 +19,7 @@ img.TabIcon {
 img.BtmLftLogo {
   left: -155px;
 }
-.TitleContent {
+.TitleContent,.CaseDetails {
   margin-left: auto;
   text-align: right;
 }
@@ -25,10 +31,6 @@ img.Notifications {
 }
 .UserData {
   text-align: right;
-}
-.CaseIdentifier p:first-child,
-.CaseInfo div:last-child p:first-child {
-  margin-left: 3px;
 }
 .CaseAssignee {
   margin-right: 0 !important;
@@ -45,7 +47,59 @@ img.Notifications {
 .CaseInfo div:first-child {
   margin-right: 0 !important;
 }
+.DayNumber {
+ margin-left: 5px !important;
+}
 .Attachments img {
   margin-left: 5px;
+}
+img.Checkmark {
+  margin-right: auto;
+}
+img.IdentifierIcon {
+    margin: 0px 0px 0px 15px;
+}
+.CaseCard.Notification {
+  text-align: right;
+}
+.CaseCard.Notification.active .Head::before {
+  margin: auto 0 auto 10px;
+}
+p.UserName::after {
+  margin-right: .255em;
+}
+button.btn.btn-primary.LogOut img {
+  right: 20px;
+}
+.CaseDetails .DayDate {
+  margin-right: 10px;
+}
+.LawyerOption label {
+  margin-right: auto !important;
+}
+.CaseDetails p.Semi.FC::before,
+.CaseDetails p.Semi.LC::before,
+.CaseDetails .CaseState p.Semi::before
+,.CaseDetails .CaseType p.Semi::before,
+.LawyerOption:first-child p::before,
+.LawyerOption:last-child p::before {
+  margin-left: 7px;
+}
+.input-group.date img {
+  left: 15px;
+}
+p.LawyerName {
+  right: 45px;
+}
+.slider.round:before {
+  right: 4px;
+}
+.CaseCard.AttachmentContainer {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.FinalProcess p {
+  margin-left: auto !important;
+  margin-right: 35px !important;
 }
 /* ---------------------COMMON STYLE----------------------- */

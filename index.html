@@ -6,6 +6,7 @@
     <title></title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
     <link rel="stylesheet" href="./assets/css/rtl.css" />
     <link rel="stylesheet" href="./assets/css/main.css" />
   </head>
@@ -13,49 +14,26 @@
     <div class="MainContainer" id="HomePage">
       <div class="Header">
         <img class="Avatar" src="./assets/images/avatar.svg" />
-        <div class="UserData dropdown">
+
+        <div class="UserData ">
           <p>مرحباً بك</p>
-          <p
-            class="UserName dropdown-toggle"
-            href="#"
-            role="button"
-            id="dropdownMenuLink"
-            data-toggle="dropdown"
-            aria-haspopup="true"
-            aria-expanded="false"
-          >
-            عمر عبد الحكيم
-          </p>
-          <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-          </div>
+          <p class="UserName">
+          عمر عبد الحكيم
+        </p>
         </div>
         <img class="Notifications" src="./assets/images/notification.svg" />
       </div>
       <div class="Body">
-        <div class="slider">
-          <div class="CaseFilter">
-            <p>05 جميع القضايا</p>
-          </div>
-          <div class="CaseFilter">
-            <p>05 قضايا جديدة</p>
-          </div>
-          <div class="CaseFilter">
-            <p>05 قضايا قيد الدراسة</p>
-          </div>
-        </div>
         <p class="Title">قضايا جديدة</p>
-        <div class="CaseCard">
+        <div class="CaseCard Imp">
           <div class="ImgContainer">
             <img src="./assets/images/caseIdentifier.svg" />
-          </div>
-          <div class="InfoContainer">
             <div class="CaseIdentifier">
               <p>جنائى رقم :</p>
               <p>1443/1/135/ج</p>
             </div>
+          </div>
+          <div class="InfoContainer">
             <div class="CaseInfo">
               <div class="DayNumber">
                 <p>3 ايام</p>
@@ -82,12 +60,12 @@
         <div class="CaseCard">
           <div class="ImgContainer">
             <img src="./assets/images/caseIdentifier2.svg" />
-          </div>
-          <div class="InfoContainer">
             <div class="CaseIdentifier">
               <p>مخدرات رقم :</p>
               <p>1443/1/135/خ</p>
             </div>
+          </div>
+          <div class="InfoContainer">
             <div class="CaseInfo">
               <div class="DayDate">
                 <p>تاريخ الجلسة :</p>
@@ -110,12 +88,13 @@
         <div class="CaseCard">
           <div class="ImgContainer">
             <img src="./assets/images/caseIdentifier3.svg" />
-          </div>
-          <div class="InfoContainer">
             <div class="CaseIdentifier">
               <p>مخدرات رقم :</p>
               <p>1443/1/135/خ</p>
             </div>
+          </div>
+          <div class="InfoContainer">
+
             <div class="CaseInfo">
               <div class="DayDate">
                 <p>تاريخ الجلسة :</p>
@@ -127,12 +106,13 @@
         <div class="CaseCard">
           <div class="ImgContainer">
             <img src="./assets/images/caseIdentifier.svg" />
-          </div>
-          <div class="InfoContainer">
             <div class="CaseIdentifier">
               <p>مخدرات رقم :</p>
               <p>1443/1/135/خ</p>
             </div>
+          </div>
+          <div class="InfoContainer">
+
             <div class="CaseInfo">
               <div class="DayDate">
                 <p>تاريخ الجلسة :</p>
@@ -142,12 +122,62 @@
           </div>
         </div>
       </div>
+      <div class="FilterContainer hidden">
+        <div class="FilterPopup ">
+          <span class="ExpandCollapse"></span>
+          <div class="Content DefaultContent">
+            <p class="Title FirstScreen">فرز حسب</p>
+          <div class="Option Selected FirstScreen" id="#firstOption">
+            <p>فرز حسب</p>
+            <img class="Checkmark" src="./assets/images/Checked.svg"/>
+          </div>
+          <div class="Option FirstScreen" id="#SecondOption">
+            <p>صاحب القضية</p>
+            <img class="Checkmark" src="./assets/images/Checked.svg"/>
+          </div>
+          </div>
+          <div class="Content SecondaryContent hidden">
+            <img class="BackBtn" src="./assets/images/BlackBackBtn.svg"/>
+            <p class="Title SecondScreen">نوع القضية</p>
+            <div class="Option SecondScreen Selected" id="#firstOption">
+              <p> جميع القضايا</p>
+              <img class="Checkmark" src="./assets/images/Checked.svg"/>
+            </div>
+            <div class="Option SecondScreen" id="#SecondOption">
+              <img class="IdentifierIcon" src="./assets/images/FIcon.svg" />
+              <p>مسلكي </p>
+              <img class="Checkmark" src="./assets/images/Checked.svg"/>
+            </div>
+            <div class="Option SecondScreen" id="#ThirdOption">
+              <img class="IdentifierIcon" src="./assets/images/SIcon.svg" />
+              <p>جنائي</p>
+              <img class="Checkmark" src="./assets/images/Checked.svg"/>
+            </div>
+            <div class="Option SecondScreen" id="#fourthOption">
+              <img class="IdentifierIcon" src="./assets/images/TIcon.svg" />
+              <p>مخدرات</p>
+              <img class="Checkmark" src="./assets/images/Checked.svg"/>
+            </div>
+          </div>
+          <div class="Content LastContent hidden">
+            <img class="PopUpAvatar" src="./assets/images/PopUpAvatar.png"/>
+            <p class="Semi">محامى</p>
+            <p  class="Bold">محمد عبد الله احمد</p>
+            <p class="Semi">رقم الهوية</p>
+            <p  class="Bold">1046403857</p>
+            <button class="btn btn-primary LogOut">تسجيل الخروج
+              <img src="./assets/images/LogOutIcon.svg"/>
+            </button>
+  
+          </div>
+        </div>
+      </div>
     </div>
   </body>
   <footer>
     <script src="./assets/js/plugins/jquery/jquery.min.js"></script>
     <script src="./assets/js/plugins/jquery/jquery-ui.min.js"></script>
-    <script src="./assets/js/plugins/popper.js/popper.min.js"></script>
+    <!-- <script src="./assets/js/plugins/popper.js/popper.min.js"></script> -->
     <script src="./assets/js/plugins/bootstrap/bootstrap.min.js"></script>
     <script src="./assets/js/ui.js"></script>
   </footer>

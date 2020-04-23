@@ -48,14 +48,24 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-input:focus {
+input:focus{
   outline: none !important;
+}
+.form-control:focus {
+  outline: none !important;
+  box-shadow:none !important;
+  border-color: #ced4da;
+}
+.hidden{
+  display: none !important;
+} 
+.NoScroll{
+  overflow: hidden !important;
 }
 
 /* --------------LOGIN-PAGE-START-------------- */
 
-#LoginPage .password input,
-.form-box button.login {
+#LoginPage .password input {
   border-bottom-right-radius: 8px;
   border-bottom-left-radius: 8px;
 }
@@ -67,10 +77,12 @@ input:focus {
   width: 100%;
   position: relative;
   background-color: rgb(248, 249, 251);
+  z-index: 5;
+  overflow: hidden;
 }
 .Loginheader {
   position: relative;
-  height: 37%;
+  height: 25%;
   width: 100%;
   margin: 0;
   padding: 0;
@@ -110,6 +122,7 @@ p.title {
   padding: 0;
   margin: 0;
   height: 20%;
+  font-family: DinNextM;
 }
 .Tab {
   width: 50%;
@@ -161,7 +174,7 @@ img.BtmLftLogo {
 .LoginBody {
   position: relative;
   display: block;
-  height: 63%;
+  height: 75%;
   overflow: hidden;
   padding: 20px;
 }
@@ -199,14 +212,14 @@ img.BtmLftLogo {
 .TitleContent p:first-child {
   font-size: 18px;
   color: #000;
-  font-weight: 600;
   line-height: 27px;
+  font-family: DinNextM;
 }
 .TitleContent p:last-child {
   font-size: 22px;
   color: #000;
-  font-weight: 100;
   line-height: 35px;
+  font-family: DinNextL;
 }
 .BodyContent {
   position: relative;
@@ -226,6 +239,7 @@ img.BtmLftLogo {
   background: rgb(250, 250, 250);
   transition: 0.2s ease-in-out;
   font-size: 16px;
+  font-family: DinNextB;
 }
 .password {
   position: relative;
@@ -243,6 +257,9 @@ img.BtmLftLogo {
   top: 12px;
   cursor: pointer;
   display: none;
+}
+input#passwordfield {
+  border-top: 0;
 }
 /* --------------LOGIN-PAGE_END--------------- */
 /* --------------HOME-PAGE-START-------------- */
@@ -285,8 +302,15 @@ img.Avatar {
   font-size: 15px;
   font-family: DinNextM;
 }
-.dropdown-toggle::after {
+p.UserName::after {
   vertical-align: initial !important;
+  display: inline-block;
+  vertical-align: .255em;
+  content: "";
+  border-top: .4em solid;
+  border-right: .4em solid transparent;
+  border-bottom: 0;
+  border-left: .4em solid transparent;
 }
 /* -----HOME-PAGE-HEADER-END----- */
 /* -----HOME-PAGE-BODY-START----- */
@@ -294,21 +318,29 @@ img.Avatar {
   position: relative;
   margin: 0;
   width: 100%;
-  padding: 10px;
+  padding:  15px;
+  overflow: hidden;
 }
 .CaseCard {
   position: relative;
-  max-height: 145px;
+  /* max-height: 145px; */
   width: 100%;
   margin: 10px 0;
   border-radius: 8px;
   background-color: rgb(255, 255, 255);
-  display: flex;
+  box-shadow: 0px 3px 7px #68696A12;
+}
+/* #LawyerHomePage .CaseCard  {
+  display: block;
+} */
+.Imp{
+  border: 1.5px solid #FF717F;
 }
 .ImgContainer {
-  width: 65px;
+  width: 100%;
   text-align: center;
-  padding: 25px 10px 0 0;
+  padding: 20px 25px 0 0;
+  display: flex;
 }
 .ImgContainer img {
   width: 40px;
@@ -317,11 +349,13 @@ img.Avatar {
   opacity: 1;
 }
 .InfoContainer {
-  width: calc(100% - 65px);
-  padding: 15px 10px;
+  width: 100%;
+  padding: 15px 25px 15px 15px;
   margin: auto 0;
 }
-.InfoContainer .CaseIdentifier,
+#HomePage .InfoContainer {
+  padding: 0px 80px 20px 20px;
+}
 .InfoContainer .CaseInfo,
 .InfoContainer .CaseAssignee {
   position: relative;
@@ -342,24 +376,27 @@ img.Avatar {
   border-radius: 10px;
   font-family: DinNextL;
 }
-.CaseInfo div {
-  display: flex;
-  margin: 0 5px;
-  border-radius: 10px;
-  font-family: DinNextL;
-}
 .DayNumber {
   font-size: 12px;
   background-color: rgb(255, 113, 127);
   color: rgb(255, 255, 255);
   padding: 0 10px;
   max-width: fit-content;
-  margin: 0 !important;
-  max-height: 20px;
+  display: none !important;
 }
+.CaseCard.Imp .InfoContainer .CaseInfo .DayNumber, .d-flex.mt-2 .DayNumber{
+  display: flex !important;
+}
+.CaseInfo div {
+  display: flex;
+  margin: 0;
+  border-radius: 10px;
+  font-family: DinNextL;
+}
+
 .DayNumber p {
   margin: auto !important;
-  padding: 0;
+  padding: 0 0 5px;
   min-width: 25px;
   z-index: 999;
 }
@@ -373,12 +410,19 @@ img.Avatar {
   min-width: fit-content;
   color: rgb(138, 138, 143);
 }
+.LawyerOption.One p {
+  color: #000;
+}
 .DayDate p {
   min-width: fit-content;
   color: rgb(138, 138, 143);
+  margin: auto;
 }
 .CaseIdentifier {
   font-family: DinNextM;
+  width: 100%;
+  display: flex;
+  padding: 0 15px;
 }
 p.Title {
   text-align: right;
@@ -387,6 +431,7 @@ p.Title {
   color: rgb(61, 65, 71);
   opacity: 1;
   margin: auto;
+  font-size: 20px;
 }
 .Attachments {
   display: flex;
@@ -394,12 +439,634 @@ p.Title {
 }
 .slider {
   position: relative;
-  width: 618px;
-  height: 36px;
+  width: 473px;
   display: flex;
-  padding: 0 15px;
+  padding: 0;
   margin: 0;
-  background-color: rgb(255, 255, 255);
+  margin-top: 20px;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+.CaseFilter {
+  min-width: fit-content;
+  text-align: center;
+  margin: 0 10px;
+  padding: 10px 20px;
+  background-color: #fff;
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  border-radius: 20px;
+  font-size: 15px;
+  font-family: DinNextL;
+  color: #ABACB4;
+}
+.CaseFilter.selected{
+  background-color: black;
+  color: rgb(240, 248, 255);
+}
+img.Filter {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  max-width: 85px;
+  max-height: 85px;
+  height: auto;
+  width: auto;
+  border-radius: 50px;
+}
+.ScrollContainer {
+  position: relative;
+  width: 100%;
+  max-height: fit-content;
+  direction: rtl;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* -----HOME-PAGE-BODY-START----- */
+/* -----FILTER-POPUP-BODY-START----- */
+.FilterContainer {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  transition: 1s ease-in-out;
+}
+.Option img.Checkmark{
+  display: none;
+}
+.Option.Selected img.Checkmark{
+  display: block !important;
+}
+span.ExpandCollapse {
+  position: absolute;
+  top: 20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 73px;
+  height: 7px;
+  background: #D1D1D1 0% 0% no-repeat padding-box;
+  border-radius: 16px;
+  opacity: 1;
+  z-index: 50;
+}
+.FilterContainer::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  z-index: 10;
+  top: 0;
+  left: 0;
+  background: #000000 0% 0% no-repeat padding-box;
+  border: 1px solid #707070;
+  opacity: 0.35;
   overflow: hidden;
 }
-/* -----HOME-PAGE-BODY-START----- */
+.FilterPopup {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  background-color: #fff;
+  padding: 10px;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  z-index: 15;
+  transition: .5s ease-in-out;
+  max-height: 100%;
+  overflow-y: auto;
+}
+.PB{
+  padding-bottom: 55px;
+}
+.Content {
+  width: 100%;
+  position: relative;
+  text-align: right;
+  margin: 0;
+  transition: .5s ease-in-out;
+  padding: 0 15px;
+} 
+.Content p.Title.FirstScreen {
+  text-align: right;
+  letter-spacing: 0px;
+  color: #282A2D;
+  opacity: 1;
+  font-size: 28px;
+  padding: 30px 0;
+}
+.Option {
+  display: flex;
+  direction: rtl;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  text-align: right;
+  letter-spacing: 0px;
+  color: #282A2D;
+  font-size: 22px;
+  opacity: 1;
+  font-family: DinNextL;
+  font-weight: 600;
+}
+img.IdentifierIcon {
+  width: 25px;
+  height: auto;
+  padding: 0;
+}
+p.Title.SecondScreen {
+  padding-top: 10px;
+}
+img.BackBtn {
+  position: relative;
+  display: flex;
+  margin-left: auto;
+  margin-top: 35px;
+  margin-bottom: 0;
+  padding: 0;
+}
+.Content.LastContent {
+  text-align: center;
+  padding: 25px 0;
+}
+img.PopUpAvatar {
+  padding: 20px 0;
+}
+.Content.LastContent p {
+  margin-top: auto;
+}
+p.Semi {
+  font-family: DinNextB;
+  letter-spacing: -0.08px;
+  color: #8A8A8F;
+  opacity: 1;
+  font-size: 14px;
+  margin-bottom: 0 !important;
+
+}
+p.Bold {
+  font-family: DinNextM;
+  letter-spacing: 0;
+  color: #000;
+  opacity: 1;
+  font-size: 18px;
+}
+button.btn.btn-primary.LogOut {
+  position: relative;
+  background: #000000 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 7px #68696A12;
+  border: 1px solid #000000;
+  border-radius: 8px;
+  opacity: 1;
+  width: 90%;
+  padding: 15px;
+  letter-spacing: 0px;
+  color: #FFFFFF;
+  opacity: 1;
+  font-size: 22px;
+  font-family: DinNextM;
+  margin-top: 20px;
+}
+button.btn.btn-primary.LogOut img {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: fit-content;
+  width: fit-content;
+}
+.btn-primary:not(:disabled):not(.disabled).active, .btn-primary:not(:disabled):not(.disabled):active, .show>.btn-primary.dropdown-toggle, .btn-primary:not(:disabled):not(.disabled).active:focus, .btn-primary:not(:disabled):not(.disabled):active:focus, .show>.btn-primary.dropdown-toggle:focus {
+  color: #fff;
+  background-color: #000;
+  border-color: #000;
+  box-shadow: 0 0 0 0.2rem rgba(0,0,0,0);
+}
+/* -----FILTER-POPUP-BODY-END----- */
+/* -----NOTIFICATION-CENTER-START----- */
+.Header.Notification {
+  color: #3D4147;
+  opacity: 1;
+  font-size: 20px;
+  font-family: DinNextM;
+  padding: 25px 15px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  box-shadow: 0px 3px 7px #00000012;
+  opacity: 1;
+  height: 80px;
+}
+.Header.Notification img.BackBtn {
+  margin-left: 15px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+.CaseCard.Notification {
+  display: block;
+  padding: 25px;
+  opacity: .8;
+}
+.CaseCard.Notification.active {
+  opacity: 1;
+}
+.CaseCard .d-flex {
+  position: relative;
+  width: 100%;
+}
+.Head {
+  letter-spacing: -0.08px;
+  color: #8A8A8F;
+  opacity: 1;
+  font-size: 14px;
+  font-family: DinNextL;
+  display: flex;
+}
+.content {
+  letter-spacing: 0px;
+  color: #8A8A8F;
+  opacity: 1;
+  font-size: 16px;
+  font-family: DinNextM;
+}
+.active .content {
+  color: #3D4147;
+}
+.content p {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 0.3rem !important;
+}
+.CaseCard.Notification.active .Head::before {
+  content: '';
+  background-color: #FF717F;
+  border-radius: 50px;
+  width: 9px;
+  height: 9px;
+  opacity: 1;
+  position: relative;
+}
+/* -----NOTIFICATION-CENTER-END----- */
+/* -----CASE-DETAILS-START----- */
+.CaseDetails{
+  background-color: #fff;
+  padding: 15px;
+  position: relative;
+  border-radius: 8px;
+  margin: 7px auto;
+}
+.CaseDetails .CaseInfo {
+  padding: 10px 0;
+  vertical-align: middle;
+  align-items: center;
+}
+.CaseDetails p.Semi {
+  font-size: 16px;
+  font-family: DinNextB;
+}
+.CaseDetails .DayDate {
+  font-size: 18px;
+  font-family: DinNextM;
+}
+.CaseState, .CaseType {
+  display: block !important;
+  width: 50%;
+}
+.CaseDetails p.Semi.FC::before{
+  content: url(../images/FTIcon.svg);
+}
+.CaseDetails p.Semi.LC::before{
+  content: url(../images/STIcon.svg);
+}
+.CaseDetails .CaseState p.Semi::before{
+  content: url(../images/TTIcon.svg);
+}
+.CaseDetails .CaseType p.Semi::before{
+  content: url(../images/FrthTIcon.svg);
+}
+.LawyerOption.One p::before{
+  content: url(../images/H.svg);
+}
+.LawyerOption.Two p:first-child::before{
+  content: url(../images/account-Assignee.svg);
+}
+.CaseState .Bold, .CaseType .Bold, .CaseInfo .Bold{
+  margin-bottom: 0 !important;
+}
+.LawyerOption {
+  position: relative;
+  display: flex;
+  padding: 25px;
+}
+.LawyerOption label {
+  display: inline-block;
+  height: fit-content;
+  position: relative;
+  max-width: 60px;
+  margin: auto 0;
+}
+
+.switch input {
+  display:none;
+}
+
+.slider.round {
+  background-color: #ccc;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  /* position: absolute; */
+  right: 0;
+  top: 0;
+  transition: .4s;
+  width: 48px;
+  height: 28px;
+  background: #DEDEDE 0% 0% no-repeat padding-box;
+  border-radius: 19px;
+  opacity: 1;
+  margin: auto;
+}
+
+.slider.round:before {
+  background-color: #fff;
+  bottom: 4px;
+  content: "";
+  height: 21px;
+  position: absolute;
+  transition: .4s;
+  width: 21px;
+}
+input:checked + .slider {
+  background-color: #000;
+}
+
+input:checked + .slider:before {
+  transform: translateX(-18.5px);
+}
+
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.LawyerOption p {
+  letter-spacing: -0.1px;
+  color: #8A8A8F;
+  opacity: 1;
+  font-size: 16px;
+  font-family: DinNextB;
+}
+.CaseCard.AttachmentContainer {
+  padding: 0;
+  text-align: center;
+  max-width: fit-content;
+  overflow: auto;
+  min-width: 100%;
+}
+.Attachment {
+  position: relative;
+  border: 1.5px dashed #D4D4D4;
+  padding: 15px 30px;
+  border-radius: 6px;
+  margin: 20px;
+}
+.Attachment p {
+  letter-spacing: -0.09px;
+  color: #8A8A8F;
+  opacity: 1;
+  font-size: 15px;
+  font-family: DinNextB;
+}
+/* -----CASE-DETAILS-POPUP----- */
+.ContentCaseDetails {
+  position: relative;
+  width: 100%;
+  margin: 0;
+  padding: 0 10px;
+  height: 100%;
+}
+.ContentCaseDetails p.Title, .FileAttachment p.Title {
+  padding: 40px 10px 10px;
+  font-size: 22px;
+}
+.UploadContainer {
+  position: relative;
+  display: flex;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+.PhotoContainer {
+  width: 50%;
+  text-align: center;
+  padding: 15px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1.5px dashed #D4D4D4;
+  border-radius: 6px;
+  opacity: 1;
+  color: #3D4147;
+  font-size: 14px;
+  font-family: DinNextM;
+}
+.TakeInstant.PhotoContainer {
+  margin: 15px 10px 25px 0;
+}
+.UploadFromPhone.PhotoContainer{
+  margin: 15px 0 25px 10px;
+}
+.PhotoContainer p{
+  margin: 0;
+}
+.FormGroup {
+  padding: 0;
+  width: 100%;
+}
+.input-group.date img {
+  position: absolute;
+  width: fit-content;
+  height: fit-content;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 0;
+}
+.form-control {
+  padding: 1.5rem .75rem !important;
+}
+.FormGroup .input-group input{
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  opacity: 1;
+  font-family: DinNextB;
+  color: #979797;
+  font-size: 16px;
+}
+.FormGroup .input-group:first-child input {
+  border-radius: 8px 8px 0px 0px;
+  border-bottom: 0;
+}
+.input-group>.form-control:not(:last-child){
+  /* border-top: 0; */
+  border-radius: 0px 0px 8px 8px;
+}
+.input-group-addon {
+  z-index: 50;
+}
+p.LawyerName {
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  font-size: 16px;
+  font-family: DinNextM;
+  color: #000;
+}
+.input-group.date {
+  margin-bottom: 10px;
+}
+img.SaveBtn {
+  position: relative;
+  display: flex;
+  vertical-align: middle;
+  align-items: center;
+  height: fit-content;
+  width: fit-content;
+  margin-right: auto;
+  display: none;
+}
+.Content.FileAttachment {
+  width: 100%;
+  position: relative;
+  padding: 0;
+}
+.Content.FileAttachment img {
+  width: 100%;
+  padding: 15px 2px;
+  border-radius: 8px;
+  height: 261px;
+}
+.InputGroup {
+  position: relative;
+  width: 100%;
+  margin: 10px 0;
+  padding: 0 10px;
+}
+.Content.FileAttachment .InputGroup input.form-control {
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #9c9c9c99;
+  border-radius: 8px 8px 0px 0px;
+  opacity: 1;
+  color: #979797;
+  font-size: 16px;
+  font-family: 'DinNextL';
+}
+.Content.FileAttachment .InputGroup textarea.form-control {
+  height: 146px;
+  background: #FFFFFF 0% 0% no-repeat padding-box;
+  border: 1px solid #9c9c9c99;
+  border-radius: 0px 0px 8px 8px;
+  opacity: 1;
+  letter-spacing: 0px;
+  color: #979797;
+  font-size: 16px;
+  font-family: 'DinNextL';
+  border-top: 0;
+}
+button.btn.btn-primary.Cancel {
+  background-color: #fff;
+  color: #000;
+}
+span#remainingC {
+  position: relative;
+  display: flex;
+  font-size: 12px;
+  color: #3d4147ad;
+  margin: 0 10px;
+}
+span#remainingC p {
+  color: #3d4147ad;
+  font-family: 'DinNextL';
+  margin: 0;
+}
+.AttachedImagesContainer {
+  position: relative;
+  width: 180px;
+  padding: 0;
+  margin: 15px 5px;
+}
+.AttachedImages {
+  width: fit-content;
+  position: relative;
+  display: flex;
+}
+.AttachedImagesContainer p {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 80%;
+  margin: 0;
+  font-size: 12px;
+  color: #fff;
+  font-family: 'DinNextL';
+  z-index: 5;
+}
+.AttachedImagesContainer::before{
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: #0000002e;
+  z-index: 2;
+  border-radius: 6px;
+}
+.AttachedImagesContainer img {
+  border-radius: 6px;
+  border: 0 solid #707070;
+}
+.FinalProcess {
+  height: 50px;
+  position: fixed;
+  width: 100%;
+  padding: 0;
+  left: 0;
+  bottom: 0;
+  background-color: #000;
+  z-index: 15;
+  display: flex;
+  color: #fff;
+  font-size: 20px;
+  height: 80px;
+}
+.FinalProcess p {
+  position: relative;
+  display: flex;
+  margin: auto;
+  font-family: 'DinNextB';
+}
+.RoundCircle {
+  position: relative;
+  width: 39px;
+  height: 39px;
+  background-color: #fff;
+  margin: auto;
+  border-radius: 50px;
+}
+.RoundCircle img {
+  height: auto;
+  width: 16px;
+  margin: auto;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+/* -----CASE-DETAILS-POPUP-End----- */
+/* -----CASE-DETAILS-END----- */
+

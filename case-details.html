@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html class="no-js" lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="x-ua-compatible" content="ie=edge" />
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap-datepicker.min.css" />
+    <link rel="stylesheet" href="./assets/css/animate.css" />
+    <link rel="stylesheet" href="./assets/css/rtl.css" />
+    <link rel="stylesheet" href="./assets/css/main.css" />
+  </head>
+  <body>
+    <div class="MainContainer" id="CaseDetails">
+      <div class="Header Notification">
+        <img class="BackBtn" src="./assets/images/BlackBackBtn.svg"/>
+        تفاصيل القضية
+      <img class="SaveBtn" src="./assets/images/SaveBtn.svg" />
+      </div>
+      <div class="CaseDetails">
+        <div class="CaseInfo">
+          <p class="Semi FC">رقم القضية</p>
+          <div class="d-flex">
+            <p  class="Bold">1443/1/135/م</p>
+          </div>
+        </div>
+        <div class="CaseInfo">
+          <p class="Semi LC">تاريخ الجلسة</p>
+          <div class="d-flex mt-2">
+            <div class="DayNumber">
+              <p>3 ايام</p>
+            </div>
+            <div class="DayDate">
+              <p>الأحد ، 1 مارس 2020</p>
+            </div>
+          </div>
+        </div>
+        <div class="CaseInfo">
+          <div class="d-flex">
+            <div class="CaseState">
+              <p class="Semi">حالة القضية</p>
+              <p  class="Bold">قيد الدراسة</p>
+            </div>
+            <div class="CaseType">
+              <p class="Semi">نوع القضية</p>
+              <p  class="Bold">مسلكي</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="Body">
+        <p class="Title">الحضور و توكيل محامي</p>
+        <div class="CaseCard">
+          <div class="LawyerOption One">
+            <p>أرغب في الحضور للجلسة</p>
+            <label class="switch" for="checkbox">
+              <input type="checkbox" id="checkbox" />
+              <div class="slider round"></div>
+            </label>
+        </div>
+        </div>
+        <div class="CaseCard">
+          <div class="LawyerOption Two">
+            <p>توكيل محامي</p>
+            <p class="LawyerName hidden">محمد عبد الله احمد</p>
+            <label class="switch" for="checkboxtwo">
+              <input id="checkboxtwo" />
+              <div class="slider round"></div>
+            </label>
+        </div>
+        </div>
+        <p class="Title mt-4">المستندات</p>
+        <div class="CaseCard AttachmentContainer">
+          <div class="Attachment">
+            <img src="./assets/images/camera-outline.svg" />
+            <p>إرفاق صور المستندات</p>
+          </div>
+          <div class="AttachedImages hidden">
+            <div class="AttachedImagesContainer">
+              <img src="./assets/images/AttachedImg.png" />
+              <p>مستندات لاستخراج جواز سفر</p>
+            </div>
+            <div class="AttachedImagesContainer">
+              <img src="./assets/images/AttachedImg.png" />
+              <p>مستندات لاستخراج جواز سفر</p>
+          </div>
+        </div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <div class="FilterContainer hidden">
+    <div class="FilterPopup ">
+      <span class="ExpandCollapse"></span>
+      <div class="Content DefaultContent hidden">
+        <p class="Title FirstScreen">فرز حسب</p>
+      <div class="Option Selected FirstScreen" id="#firstOption">
+        <p>فرز حسب</p>
+        <img class="Checkmark" src="./assets/images/Checked.svg"/>
+      </div>
+      <div class="Option FirstScreen" id="#SecondOption">
+        <p>صاحب القضية</p>
+        <img class="Checkmark" src="./assets/images/Checked.svg"/>
+      </div>
+      </div>
+      <div class="Content SecondaryContent hidden">
+        <img class="BackBtn" src="./assets/images/BlackBackBtn.svg"/>
+        <p class="Title FirstScreen pt-3">نوع القضية</p>
+        <div class="Option SecondScreen Selected" id="#firstOption">
+          <p> جميع القضايا</p>
+          <img class="Checkmark" src="./assets/images/Checked.svg"/>
+        </div>
+        <div class="Option SecondScreen" id="#SecondOption">
+          <img class="IdentifierIcon" src="./assets/images/FIcon.svg" />
+          <p>مسلكي </p>
+          <img class="Checkmark" src="./assets/images/Checked.svg"/>
+        </div>
+        <div class="Option SecondScreen" id="#ThirdOption">
+          <img class="IdentifierIcon" src="./assets/images/SIcon.svg" />
+          <p>جنائي</p>
+          <img class="Checkmark" src="./assets/images/Checked.svg"/>
+        </div>
+        <div class="Option SecondScreen" id="#fourthOption">
+          <img class="IdentifierIcon" src="./assets/images/TIcon.svg" />
+          <p>مخدرات</p>
+          <img class="Checkmark" src="./assets/images/Checked.svg"/>
+        </div>
+      </div>
+      <div class="Content LastContent hidden">
+        <img class="PopUpAvatar" src="./assets/images/PopUpAvatar.png"/>
+        <p class="Semi">محامى</p>
+        <p  class="Bold">محمد عبد الله احمد</p>
+        <p class="Semi">رقم الهوية</p>
+        <p  class="Bold">1046403857</p>
+        <button class="btn btn-primary LogOut">تسجيل الخروج
+          <img src="./assets/images/LogOutIcon.svg"/>
+        </button>
+
+      </div>
+      <div class="Content ContentCaseDetails hidden">
+        <p class="Title ">إرفاق صورة توكيل المحامي</p>
+        <div class="UploadContainer">
+          <div class="TakeInstant PhotoContainer">
+            <img src="./assets/images/Upload.svg" />
+            <p>صورة من الهاتف</p>
+          </div>
+          <div class="UploadFromPhone PhotoContainer">
+            <img src="./assets/images/camera-outline.svg" />
+            <p>التقاط صورة</p>
+          </div>
+        </div>
+        <div class="FormGroup">
+          <div class="input-group">
+            <input type="number" class="form-control LawyerNo" placeholder="إدخال رقم هوية المحامى">
+          </div>
+          <div class="input-group date" data-provide="datepicker">
+            <input type="text" class="form-control" placeholder="تاريخ ميلاد المحامي">
+            <div class="input-group-addon">
+              <img src="./assets/images/DatePickerIcon.svg"/>
+            </div>
+        </div>
+          <button class="btn btn-primary LogOut w-100 my-4">توكيل المحامي
+          </button>
+        </div>
+      </div>
+      <div class="Content FileAttachment hidden">
+        <p class="Title ">إرفاق مستندات</p>
+        <img src="./assets/images/Attachment.png" />
+        <div class="InputGroup">
+          <input class="form-control" type="text" placeholder="إدخال اسم المستندات"/>
+          <textarea class="form-control mb-1" type="textarea" maxlength="140" placeholder="إدخال وصف او محتوى المستندات"></textarea>
+          <span id='remainingC'><p>140</p>/<p>0</p></span>
+
+        <button class="btn btn-primary LogOut w-100">إرفاق المستندات
+        </button>
+        <button class="btn btn-primary LogOut Cancel w-100 mt-2">إلغاء
+        </button>
+      </div>
+      </div>
+    </div>
+  </div>
+  <div class="FinalProcess hidden">
+    <div class="RoundCircle">
+      <img src="./assets/images/Finale.svg" />
+    </div>
+    <p>إرسال البيانات لهيئة المحكمة</p>
+  </div>
+  <footer>
+    <script src="./assets/js/plugins/jquery/jquery.min.js"></script>
+    <script src="./assets/js/plugins/jquery/jquery-ui.min.js"></script>
+    <script src="./assets/js/plugins/popper.js/popper.min.js"></script>
+    <script src="assets/js/plugins/bootstrap/bootstrap-datetimepicker.min.js"></script>
+    <script src="./assets/js/plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="./assets/js/ui.js"></script>
+  </footer>
+</html>
