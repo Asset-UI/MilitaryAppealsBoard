@@ -504,9 +504,10 @@ img.Filter {
 }
 span.ExpandCollapse {
   position: absolute;
-  top: 20px;
+  top: 0;
   left: 0;
   right: 0;
+  bottom: 0;
   margin: auto;
   width: 73px;
   height: 7px;
@@ -514,6 +515,13 @@ span.ExpandCollapse {
   border-radius: 16px;
   opacity: 1;
   z-index: 50;
+}
+div#ExpandCollapse {
+  position: relative;
+  /* background: black; */
+  width: 150px;
+  height: 50px;
+  margin: auto;
 }
 .FilterContainer::before {
   content: "";
@@ -560,7 +568,7 @@ span.ExpandCollapse {
   color: #282A2D;
   opacity: 1;
   font-size: 28px;
-  padding: 30px 0;
+  padding: 0 0 20px;
 }
 .Option {
   display: flex;
@@ -588,13 +596,12 @@ img.BackBtn {
   position: relative;
   display: flex;
   margin-left: auto;
-  margin-top: 35px;
   margin-bottom: 0;
   padding: 0;
 }
 .Content.LastContent {
   text-align: center;
-  padding: 25px 0;
+  padding: 0 0 25px;
 }
 img.PopUpAvatar {
   padding: 20px 0;
@@ -852,7 +859,7 @@ input:checked + .slider:before {
   height: 100%;
 }
 .ContentCaseDetails p.Title, .FileAttachment p.Title {
-  padding: 40px 10px 10px;
+  padding: 0 0 20px;
   font-size: 22px;
 }
 .UploadContainer {

@@ -25,7 +25,7 @@ $(document).ready(function() {
   $("img.Filter").on('click', function(){
     $( 'body' ).addClass('NoScroll');
     $('.FilterContainer, .DefaultContent').removeClass('hidden');
-    $('.FilterPopup').removeClass(' animated slideOutDown').addClass(' animated slideInUp').css('height', '230');
+    $('.FilterPopup').removeClass(' animated slideOutDown').addClass(' animated slideInUp').css('height', '250');
   })
   $(".Option").on('click', function(){
     if ($(this).hasClass('FirstScreen')){
@@ -45,17 +45,9 @@ $(document).ready(function() {
     }
   })
   $('.Content.SecondaryContent img.BackBtn').on('click', function(){
-    $('.FilterPopup').css('height', '230');
+    $('.FilterPopup').css('height', '250');
     $('.Content').addClass('hidden');
     $('.DefaultContent').removeClass('hidden');
-  })
-  $('.ExpandCollapse').on('click', function(){
-    $( 'body' ).removeClass('NoScroll');
-    $('.FilterPopup').removeClass(' animated slideInUp').addClass(' animated slideOutDown').css('height', '');
-    setTimeout (function(){
-    $('.FilterContainer, .LastContent').addClass('hidden');
-    $('.Content').addClass('hidden');
-  }, 300);
   })
   $('.LawyerOption.One label.switch').on('click', function(){
     $(".LawyerOption.Two label").toggleClass('toggeled');
@@ -85,19 +77,13 @@ $(document).ready(function() {
       $(".Attachment").removeClass('Clickable');
     }
   });
-  $('.FilterPopup span.ExpandCollapse').on('click', function(){
-    if ($(this).hasClass('Safe')){
-      $("#checkboxtwo").prop("checked", true);
-      $(".Attachment").addClass('Clickable');
-      $('.FilterPopup span.ExpandCollapse').removeClass("Safe");
-    }
-    else{
-      $("#checkboxtwo").prop("checked", false);
-      $(".Attachment").removeClass('Clickable');
-    }
-  });
   $(".FormGroup button.btn.btn-primary.LogOut").on('click', function(){
-    $('.FilterPopup span.ExpandCollapse').click();
+    $( 'body' ).removeClass('NoScroll');
+    $('.FilterPopup').removeClass(' animated slideInUp').addClass(' animated slideOutDown').css('height', '');
+    setTimeout (function(){
+      $('.FilterContainer, .LastContent').addClass('hidden');
+      $('.Content').addClass('hidden');
+    }, 300);
     $("#checkboxtwo").prop("checked", true);
     $('.LawyerName').removeClass('hidden');
     $(".Attachment").addClass('Clickable');
@@ -119,3 +105,34 @@ $(document).ready(function() {
     });   
    });
 });
+// -----------------SCROLL-TOUCH-MOVE-------------------
+let start = null;
+
+document.getElementById("ExpandCollapse").addEventListener("touchstart", function(e) {
+    start = e.changedTouches[0];
+});
+
+
+document.getElementById("ExpandCollapse").addEventListener("touchend", function(e) {
+  let end = e.changedTouches[0];
+
+  if(end.screenY - start.screenY > 0)
+  {
+    $( 'body' ).removeClass('NoScroll');
+    $('.FilterPopup').removeClass(' animated slideInUp').addClass(' animated slideOutDown').css('height', '');
+    setTimeout (function(){
+    $('.FilterContainer, .LastContent').addClass('hidden');
+    $('.Content').addClass('hidden');
+  }, 300);
+  if ($('.ExpandCollapse').hasClass('Safe')){
+    $("#checkboxtwo").prop("checked", true);
+    $(".Attachment").addClass('Clickable');
+    $('.ExpandCollapse').removeClass("Safe");
+  }
+  else{
+    $("#checkboxtwo").prop("checked", false);
+    $(".Attachment").removeClass('Clickable');
+  }
+  }
+});
+// -----------------SCROLL-TOUCH-MOVE-------------------
